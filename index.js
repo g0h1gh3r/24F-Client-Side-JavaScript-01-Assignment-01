@@ -27,14 +27,27 @@ function cycleWord(type) {
 }
 
 function generateStory() {
-  console.log('generate!')
+  var element = document.querySelector('.story')
+
   let story = `${words.subject[currentIndices.subject]} ${
     words.verb[currentIndices.verb]
   } the ${words.adjective[currentIndices.adjective]} ${
     words.object[currentIndices.object]
   } ${words.location[currentIndices.location]}.`
-  document.getElementById('story').textContent = story
-  console.log('generate!')
+
+  element.textContent = story
+}
+
+window.onload = function () {
+  document.getElementById('subject').textContent =
+    words.subject[currentIndices.subject]
+  document.getElementById('verb').textContent = words.verb[currentIndices.verb]
+  document.getElementById('adjective').textContent =
+    words.adjective[currentIndices.adjective]
+  document.getElementById('object').textContent =
+    words.object[currentIndices.object]
+  document.getElementById('location').textContent =
+    words.location[currentIndices.location]
 }
 
 document
