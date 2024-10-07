@@ -1,0 +1,58 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-areas:
+    'header header header header header'
+    'subject verb adjective object location'
+    'generate-button generate-button generate-button generate-button generate-button';
+}
+h1 {
+  grid-area: header;
+}
+#subject {
+  grid-area: subject;
+}
+#verb {
+  grid-area: verb;
+}
+#adjective {
+  grid-area: adjective;
+}
+#object {
+  grid-area: object;
+}
+#location {
+  grid-area: location;
+}
+.word-button {
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.generate-button {
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  grid-area: generate-button;
+}
+#story {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
