@@ -20,3 +20,38 @@ let currentIndices = {
   object: 0,
   location: 0,
 }
+
+function cycleWord(type) {
+  currentIndices[type] = (currentIndices[type] + 1) % words[type].length
+  document.getElementById(type).textContent = words[type][currentIndices[type]]
+}
+
+function generateStory() {
+  console.log('generate!')
+  let story = `${words.subject[currentIndices.subject]} ${
+    words.verb[currentIndices.verb]
+  } the ${words.adjective[currentIndices.adjective]} ${
+    words.object[currentIndices.object]
+  } ${words.location[currentIndices.location]}.`
+  document.getElementById('story').textContent = story
+  console.log('generate!')
+}
+
+document
+  .getElementById('subject')
+  .addEventListener('click', () => cycleWord('subject'))
+document
+  .getElementById('verb')
+  .addEventListener('click', () => cycleWord('verb'))
+document
+  .getElementById('adjective')
+  .addEventListener('click', () => cycleWord('adjective'))
+document
+  .getElementById('object')
+  .addEventListener('click', () => cycleWord('object'))
+document
+  .getElementById('location')
+  .addEventListener('click', () => cycleWord('location'))
+document
+  .getElementById('generateStory')
+  .addEventListener('click', generateStory)
